@@ -1,0 +1,21 @@
+// Last updated: 11/08/2026, 11:39:03
+class Solution {
+    public boolean checkStraightLine(int[][] coordinates) {
+        int x0 = coordinates[0][0];
+        int y0 = coordinates[0][1];
+        int x1 = coordinates[1][0];
+        int y1 = coordinates[1][1];
+
+        for (int i = 2; i < coordinates.length; i++) {
+            int x = coordinates[i][0];
+            int y = coordinates[i][1];
+
+            // Cross multiplication to compare slopes without division
+            if ((x1 - x0) * (y - y0) != (y1 - y0) * (x - x0)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
