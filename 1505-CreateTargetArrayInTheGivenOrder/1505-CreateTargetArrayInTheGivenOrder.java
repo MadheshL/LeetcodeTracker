@@ -1,0 +1,19 @@
+// Last updated: 11/08/2026, 11:38:48
+class Solution {
+    public int[] createTargetArray(int[] nums, int[] index) {
+        int[] target = new int[nums.length];
+        int currentsize = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (index[i] < currentsize) {
+                for (int j = currentsize - 1; j >= index[i]; j--) {
+                    target[j + 1] = target[j];
+                }
+            }
+            target[index[i]] = nums[i];
+            currentsize++;
+        }
+
+        return target;
+    }
+}
