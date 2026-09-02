@@ -1,4 +1,4 @@
-// Last updated: 02/09/2026, 12:25:20
+// Last updated: 02/09/2026, 12:25:37
 1class Solution {
 2    public int[] maxSlidingWindow(int[] nums, int k) {
 3        Deque<Integer> q = new ArrayDeque<>();  
